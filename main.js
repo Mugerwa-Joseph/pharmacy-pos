@@ -10,26 +10,27 @@ const {
 } = electron;
 
 let mainWindow;
-let cmd = "C:\\POS-old\\php\\php -S localhost:9000 -t C:\\POS-old\\pharmacy-pos C:\\POS-old\\pharmacy-pos\\router.php";// let cmd = "php -S localhost:9000 -t . router.php"; // Linux or mac
+// let cmd = "C:\\POS-old\\php\\php -S localhost:9000 -t C:\\POS-old\\pharmacy-pos C:\\POS-old\\pharmacy-pos\\router.php";//
+let cmd = "php -S localhost:9000 -t . router.php"; // Linux or mac
 
 child(cmd, function (err, data) {
   if(err){
       const fs = require('fs');
-      fs.open('C:\\POS-old\\logs.txt', 'a+', (error, fd) => {
-          if (error) console.log(error);
-          fs.writeFile(fd, err, (err) =>{
-              if (err) console.log(err);
-          });
-      });
+      // fs.open('C:\\POS-old\\logs.txt', 'a+', (error, fd) => {
+      //     if (error) console.log(error);
+      //     fs.writeFile(fd, err, (err) =>{
+      //         if (err) console.log(err);
+      //     });
+      // });
   }
   if(data){
       const fs = require('fs');
-      fs.open('C:\\POS-old\\logs.txt', 'a+', (err, fd) => {
-          if (err) console.log(err);
-          fs.writeFile(fd, data, (err) =>{
-              if (err) console.log(err);
-          });
-      });
+      // fs.open('C:\\POS-old\\logs.txt', 'a+', (err, fd) => {
+      //     if (err) console.log(err);
+      //     fs.writeFile(fd, data, (err) =>{
+      //         if (err) console.log(err);
+      //     });
+      // });
   }
 });
 
